@@ -1,8 +1,8 @@
 import React from 'react';
-import TestActionButtons from '../test-action-buttons';
+import InterceptDetails from '../intercept-details';
 
 const App = () => (
-	<TestActionButtons />
+	<InterceptDetails />
 );
 
 export default App;
