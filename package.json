@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jamie Hoeks <j@skeoh.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^1.13.2"
+  }
 }
