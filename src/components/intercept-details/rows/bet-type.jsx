@@ -6,6 +6,6 @@ import InterceptDetailValue from '../intercept-detail-value';
 export default () => (
 	<InterceptDetailRow>
 		<InterceptDetailLabel>Bet type</InterceptDetailLabel>
-		<InterceptDetailValue>Doubles</InterceptDetailValue>
+		<InterceptDetailValue value="Doubles" />
 	</InterceptDetailRow>
 );
