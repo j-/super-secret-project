@@ -9,7 +9,7 @@ module.exports = {
 		filename: 'bundle.js',
 	},
 	resolve: {
-		extensions: ['', '.js', '.jsx'],
+		extensions: ['', '.js', '.jsx', '.css', '.less'],
 	},
 	module: {
 		loaders: [
@@ -19,6 +19,13 @@ module.exports = {
 					path.resolve(__dirname, 'src'),
 				],
 				test: /\.jsx?$/,
+			},
+			{
+				loader: 'style!css?modules!less',
+				include: [
+					path.resolve(__dirname, 'src'),
+				],
+				test: /\.(css|less)$/,
 			},
 		],
 	},
