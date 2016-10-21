@@ -1,11 +1,11 @@
 import React from 'react';
-import InterceptDetailRow from '../intercept-detail-row';
-import InterceptDetailLabel from '../intercept-detail-label';
-import InterceptDetailValue from '../intercept-detail-value';
+import Row from '../intercept-detail-row';
+import Label from '../intercept-detail-label';
+import Value from '../intercept-detail-value';
 
 export default () => (
-	<InterceptDetailRow>
-		<InterceptDetailLabel>Bet type</InterceptDetailLabel>
-		<InterceptDetailValue value="Doubles" />
-	</InterceptDetailRow>
+	<Row>
+		<Label>Bet type</Label>
+		<Value value="Doubles" />
+	</Row>
 );
