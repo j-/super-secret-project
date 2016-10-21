@@ -4,6 +4,18 @@ import {
 	detailsValue,
 } from './styles';
 
+const Editable = ({ value, ...props }) => (
+	<input
+		type="text"
+		defaultValue={ value }
+		{ ...props }
+	/>
+);
+
+const Noneditable = ({ value, ...props }) => (
+	<span { ...props }>{ value }</span>
+);
+
 const InterceptDetailValue = ({
 	editable,
 	value,
@@ -11,9 +23,9 @@ const InterceptDetailValue = ({
 }) => {
 	let childElement;
 	if (editable) {
-		childElement = <input type="text" defaultValue={ value } { ...props } />;
+		childElement = <Editable value={ value } { ...props } />;
 	} else {
-		childElement = <span { ...props }>{ value }</span>;
+		childElement = <Noneditable value={ value } { ...props } />;
 	}
 	return (
 		<div className={ detailsValue }>
