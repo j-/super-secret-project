@@ -1,3 +1,7 @@
+@colorAccept: #418541;
+@colorPartial: #d7a120;
+@colorReject: #cd4c45;
+
 .button {
 	color: #fff;
 	border: none;
@@ -5,15 +9,15 @@
 
 .accept {
 	composes: button;
-	background-color: #418541;
+	background-color: @colorAccept;
 }
 
 .partial {
 	composes: button;
-	background-color: #d7a120;
+	background-color: @colorPartial;
 }
 
 .reject {
 	composes: button;
-	background-color: #cd4c45;
+	background-color: @colorReject;
 }
