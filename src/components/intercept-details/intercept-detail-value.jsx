@@ -1,20 +1,10 @@
 import React, { PropTypes } from 'react';
+import Editable from './value-editable';
+import Noneditable from './value-noneditable';
 
 import {
 	detailsValue,
 } from './styles';
-
-const Editable = ({ value, ...props }) => (
-	<input
-		type="text"
-		defaultValue={ value }
-		{ ...props }
-	/>
-);
-
-const Noneditable = ({ value, ...props }) => (
-	<span { ...props }>{ value }</span>
-);
 
 const InterceptDetailValue = ({
 	editable,
