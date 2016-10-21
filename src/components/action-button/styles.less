@@ -10,14 +10,29 @@
 .accept {
 	composes: button;
 	background-color: @colorAccept;
+	cursor: pointer;
+
+	&:hover {
+		background-color: darken(@colorAccept, 10%);
+	}
 }
 
 .partial {
 	composes: button;
 	background-color: @colorPartial;
+	cursor: pointer;
+
+	&:hover {
+		background-color: darken(@colorPartial, 10%);
+	}
 }
 
 .reject {
 	composes: button;
 	background-color: @colorReject;
+	cursor: pointer;
+
+	&:hover {
+		background-color: darken(@colorReject, 10%);
+	}
 }
