@@ -1,11 +1,13 @@
 import React from 'react';
-import ActionButton from '../action-button';
+import AcceptButton from '../accept-button';
+import PartialButton from '../partial-button';
+import RejectButton from '../reject-button';
 
 const TESTActionButtons = () => (
 	<div>
-		<ActionButton variant="accept">Accept</ActionButton>
-		<ActionButton variant="partial">Partial</ActionButton>
-		<ActionButton variant="reject">Reject</ActionButton>
+		<AcceptButton />
+		<PartialButton />
+		<RejectButton />
 	</div>
 );
 
