@@ -9,9 +9,9 @@ export const getBetType = (state, interceptId) => 'Doubles';
 
 export const getNoOfBets = (state, interceptId) => 3;
 
-export const getBetCost = (state, interceptId) => 25.78;
-
 export const getOdds = (state, interceptId) => 14.38;
+
+export const getBetCost = (state, interceptId) => 25.78;
 
 export const getPayout = (state, interceptId) => (
 	getOdds(state, interceptId) * getBetCost(state, interceptId)

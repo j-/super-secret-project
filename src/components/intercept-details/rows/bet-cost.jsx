@@ -6,6 +6,6 @@ import Value from '../intercept-detail-value';
 export default ({ value }) => (
 	<Row>
 		<Label>Bet cost</Label>
-		<Value value={ value } />
+		<Value value={ value } editable />
 	</Row>
 );

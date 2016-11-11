@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 
 import BetType from './bet-type';
 import NoOfBets from './no-of-bets';
-import BetCost from './bet-cost';
 import Odds from './odds';
+import BetCost from './bet-cost';
 import Payout from './payout';
 import Liability from './liability';
 import CurrentPosition from './current-position';
@@ -17,8 +17,8 @@ const InterceptDetailsRows = ({ ...props }) => (
 	<div>
 		<BetType value={ props.betType } />
 		<NoOfBets value={ props.noOfBets } />
-		<BetCost value={ props.betCost } />
 		<Odds value={ props.odds } />
+		<BetCost value={ props.betCost } />
 		<Payout value={ props.payout } />
 		<Liability value={ props.liability } />
 		<CurrentPosition value={ props.currentPosition } />
@@ -35,8 +35,8 @@ InterceptDetailsRows.propTypes = {
 const mapStateToProps = (state, { interceptId }) => ({
 	betType: selectors.getBetType(state, interceptId),
 	noOfBets: selectors.getNoOfBets(state, interceptId),
-	betCost: selectors.getBetCost(state, interceptId),
 	odds: selectors.getOdds(state, interceptId),
+	betCost: selectors.getBetCost(state, interceptId),
 	payout: selectors.getPayout(state, interceptId),
 	liability: selectors.getLiability(state, interceptId),
 	currentPosition: selectors.getCurrentPosition(state, interceptId),
