@@ -11,7 +11,9 @@ export const getNoOfBets = (state, interceptId) => 3;
 
 export const getOdds = (state, interceptId) => 14.38;
 
-export const getBetCost = (state, interceptId) => 25.78;
+export const getBetCost = (state, interceptId) => (
+	getLiabilityRatio(state, interceptId) * 25.78
+);
 
 export const getPayout = (state, interceptId) => (
 	getOdds(state, interceptId) * getBetCost(state, interceptId)
@@ -32,4 +34,5 @@ export const getNewPosition = (state, interceptId) => (
 	getBetPosition(state, interceptId)
 );
 
-export const getLiabilityRatio = (state, interceptId) => 1;
+const RATIO = Math.random();
+export const getLiabilityRatio = (state, interceptId) => RATIO;
