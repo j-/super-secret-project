@@ -3,9 +3,9 @@ import Row from '../intercept-detail-row';
 import Label from '../intercept-detail-label';
 import Value from '../intercept-detail-value';
 
-export default () => (
+export default ({ value }) => (
 	<Row>
 		<Label>Liability ratio</Label>
-		<Value value="1.00" editable />
+		<Value value={ value } editable />
 	</Row>
 );

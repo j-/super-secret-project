@@ -3,9 +3,9 @@ import Row from '../intercept-detail-row';
 import Label from '../intercept-detail-label';
 import Value from '../intercept-detail-value';
 
-export default () => (
+export default ({ value }) => (
 	<Row>
 		<Label>Current position</Label>
-		<Value value="0" />
+		<Value value={ value } />
 	</Row>
 );

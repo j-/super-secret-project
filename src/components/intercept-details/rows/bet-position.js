@@ -5,7 +5,7 @@ import Value from '../intercept-detail-value';
 
 export default ({ value }) => (
 	<Row>
-		<Label>No. of bets</Label>
-		<Value value={ value } />
+		<Label>Bet position</Label>
+		<Value value={ value } editable />
 	</Row>
 );
