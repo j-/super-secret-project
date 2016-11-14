@@ -5,20 +5,20 @@ import PartialButton from '../partial-button';
 const AcceptPartialButton = ({
 	partial,
 	interceptId,
-	partialIntercept,
-	acceptIntercept,
+	onClickPartial,
+	onClickAccept,
 	...props,
 }) => (
 	partial ?
-		<PartialButton onClick={ partialIntercept } { ...props } /> :
-		<AcceptButton onClick={ acceptIntercept } { ...props } />
+		<PartialButton onClick={ onClickPartial } { ...props } /> :
+		<AcceptButton onClick={ onClickAccept } { ...props } />
 );
 
 AcceptPartialButton.propTypes = {
 	partial: PropTypes.bool,
 	interceptId: PropTypes.string.isRequired,
-	partialIntercept: PropTypes.func.isRequired,
-	acceptIntercept: PropTypes.func.isRequired,
+	onClickPartial: PropTypes.func.isRequired,
+	onClickAccept: PropTypes.func.isRequired,
 };
 
 AcceptPartialButton.defaultProps = {

@@ -13,8 +13,8 @@ const mapStateToProps = (state, { interceptId }) => ({
 });
 
 const mapDispatchToProps = (dispatch, { interceptId }) => ({
-	acceptIntercept: () => acceptIntercept(interceptId),
-	partialIntercept: (stake) => partialIntercept(interceptId, stake),
+	onClickAccept: () => acceptIntercept(interceptId),
+	onClickPartial: (stake) => partialIntercept(interceptId, stake),
 });
 
 export default connect(
