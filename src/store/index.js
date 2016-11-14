@@ -1,13 +1,22 @@
+import {
+	SET_LIABILITY_RATIO,
+} from './types';
+
 export default (state = {}, action) => {
 	switch (action.type) {
+		case SET_LIABILITY_RATIO:
+			return {
+				...state,
+				liabilityRatio: action.ratio,
+			};
 		default:
 			return state;
 	}
 }
 
-const RATIO = Math.random();
-
-export const getLiabilityRatio = (state, interceptId) => RATIO;
+export const getLiabilityRatio = (state, interceptId) => (
+	state.liabilityRatio || 1
+);
 
 export const getImmutableBetType = (state, interceptId) => 'Doubles';
 
