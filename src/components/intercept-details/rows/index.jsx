@@ -36,12 +36,12 @@ const mapStateToProps = (state, { interceptId }) => ({
 	betType: selectors.getImmutableBetType(state, interceptId),
 	noOfBets: selectors.getImmutableNoOfBets(state, interceptId),
 	odds: selectors.getImmutableOdds(state, interceptId),
-	betCost: selectors.getBetCost(state, interceptId),
-	payout: selectors.getPayout(state, interceptId),
-	liability: selectors.getLiability(state, interceptId),
+	betCost: selectors.getScaledBetCost(state, interceptId),
+	payout: selectors.getScaledPayout(state, interceptId),
+	liability: selectors.getScaledLiability(state, interceptId),
 	currentPosition: selectors.getImmutableCurrentPosition(state, interceptId),
-	betPosition: selectors.getBetPosition(state, interceptId),
-	newPosition: selectors.getNewPosition(state, interceptId),
+	betPosition: selectors.getScaledBetPosition(state, interceptId),
+	newPosition: selectors.getScaledNewPosition(state, interceptId),
 	liabilityRatio: selectors.getLiabilityRatio(state, interceptId),
 });
 

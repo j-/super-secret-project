@@ -27,6 +27,20 @@ module.exports = {
 				],
 				test: /\.(css|less)$/,
 			},
+			{
+				loader: 'style!css',
+				include: [
+					path.resolve(__dirname, 'node_modules'),
+				],
+				test: /\.css$/,
+			},
+			{
+				loader: 'file',
+				include: [
+					path.resolve(__dirname, 'node_modules'),
+				],
+				test: /\.(woff|ttf|eot)$/,
+			},
 		],
 	},
 	devtool: 'source-map',

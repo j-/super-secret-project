@@ -2,8 +2,6 @@ import React, { PropTypes } from 'react';
 
 import {
 	detailsValue,
-	detailsInputEditable as inputEditable,
-	detailsInputNoneditable as inputNoneditable,
 } from './styles';
 
 const InterceptDetailValue = ({
@@ -16,7 +14,7 @@ const InterceptDetailValue = ({
 			type="text"
 			defaultValue={ value }
 			readOnly={ !editable }
-			className={ editable ? inputEditable : inputNoneditable }
+			className="pt-input"
 			{ ...props }
 		/>
 	</div>
