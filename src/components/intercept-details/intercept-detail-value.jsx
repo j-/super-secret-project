@@ -1,4 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+
+import {
+	setLiabilityRatio,
+} from '../../store/actions';
 
 import {
 	detailsValue,
@@ -11,6 +16,14 @@ class InterceptDetailValue extends Component {
 			value: props.value,
 		};
 		this.handleChange = this.handleChange.bind(this);
+		this.handleKeyPress = this.handleKeyPress.bind(this);
+		this.handleBlur = this.handleBlur.bind(this);
+	}
+
+	componentWillReceiveProps ({ value }) {
+		if (value) {
+			this.setState({ value });
+		}
 	}
 
 	handleChange (e) {
@@ -18,6 +31,23 @@ class InterceptDetailValue extends Component {
 		this.setState({
 			value: e.target.value,
 		});
+	}
+
+	handleKeyPress (e) {
+		if (e.which === 13) {
+			e.preventDefault();
+			this.sendValue();
+		}
+	}
+
+	handleBlur () {
+		this.sendValue();
+	}
+
+	sendValue () {
+		const { value } = this.state;
+		const { onChange } = this.props;
+		onChange(value);
 	}
 
 	render () {
@@ -31,12 +61,14 @@ class InterceptDetailValue extends Component {
 		return (
 			<div className={ detailsValue }>
 				<input
+					{ ...props }
 					type="text"
-					onChange={ this.handleChange }
 					readOnly={ !editable }
 					className="pt-input"
-					{ ...props }
 					value={ value }
+					onChange={ this.handleChange }
+					onKeyPress={ this.handleKeyPress }
+					onBlur={ this.handleBlur }
 				/>
 			</div>
 		);
@@ -46,10 +78,18 @@ class InterceptDetailValue extends Component {
 InterceptDetailValue.propTypes = {
 	editable: PropTypes.bool,
 	value: PropTypes.any,
+	onChange: PropTypes.func.isRequired,
 };
 
 InterceptDetailValue.defaultProps = {
 	editable: false,
 };
 
-export default InterceptDetailValue;
+const mapDispatchToProps = {
+	onChange: setLiabilityRatio,
+};
+
+export default connect(
+	null,
+	mapDispatchToProps
+)(InterceptDetailValue);
