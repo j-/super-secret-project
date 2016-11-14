@@ -1,25 +1,20 @@
 import React, { PropTypes } from 'react';
-
-import {
-	accept as acceptClassName,
-	partial as partialClassName,
-	reject as rejectClassName,
-} from './styles';
+import { Button } from '@blueprintjs/core';
 
 const ActionButton = ({ variant, ...props }) => {
 	let className;
 	switch (variant) {
 		case 'accept':
-			className = acceptClassName;
+			className = 'pt-intent-success';
 			break;
 		case 'partial':
-			className = partialClassName;
+			className = 'pt-intent-warning';
 			break;
 		case 'reject':
-			className = rejectClassName;
+			className = 'pt-intent-danger';
 			break;
 	}
-	return <button className={ className } { ...props } />;
+	return <Button className={ `pt-button pt-large ${className}` } { ...props } />;
 };
 
 ActionButton.propTypes = {

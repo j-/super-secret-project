@@ -18,6 +18,10 @@ export const getLiabilityRatio = (state, interceptId) => (
 	state.liabilityRatio || 1
 );
 
+export const getIsInterceptModified = (state, interceptId) => (
+	getLiabilityRatio(state, interceptId) !== 1
+);
+
 export const getImmutableBetType = (state, interceptId) => 'Doubles';
 
 export const getImmutableNoOfBets = (state, interceptId) => 3;
