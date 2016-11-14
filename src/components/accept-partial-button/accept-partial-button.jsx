@@ -10,8 +10,16 @@ const AcceptPartialButton = ({
 	...props,
 }) => (
 	partial ?
-		<PartialButton onClick={ onClickPartial } { ...props } /> :
-		<AcceptButton onClick={ onClickAccept } { ...props } />
+		<PartialButton
+			title="Accept this bet with less than full stake"
+			onClick={ onClickPartial }
+			{ ...props }
+		/> :
+		<AcceptButton
+			title="Accept this bet at full stake"
+			onClick={ onClickAccept }
+			{ ...props }
+		/>
 );
 
 AcceptPartialButton.propTypes = {
