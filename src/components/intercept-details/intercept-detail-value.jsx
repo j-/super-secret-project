@@ -45,14 +45,16 @@ class InterceptDetailValue extends Component {
 	}
 
 	handleKeyPress (e) {
-		if (e.which === 13) {
+		if (this.props.editable && e.which === 13) {
 			e.preventDefault();
 			this.sendValue();
 		}
 	}
 
 	handleBlur () {
-		this.sendValue();
+		if (this.props.editable) {
+			this.sendValue();
+		}
 	}
 
 	sendValue () {
