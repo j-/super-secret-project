@@ -10,6 +10,6 @@ const title = (
 export default ({ value }) => (
 	<Row title={ title }>
 		<Label>Bet position</Label>
-		<Value value={ value } editable alignRight />
+		<Value value={ value } editable alignRight decimalPlaces={ 2 } />
 	</Row>
 );

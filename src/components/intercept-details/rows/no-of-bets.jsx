@@ -10,6 +10,6 @@ const title = (
 export default ({ value }) => (
 	<Row title={ title }>
 		<Label>No. of bets</Label>
-		<Value value={ value } alignRight />
+		<Value value={ value } alignRight decimalPlaces={ 0 } />
 	</Row>
 );

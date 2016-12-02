@@ -13,16 +13,27 @@ class InterceptDetailValue extends Component {
 	constructor (props) {
 		super(props);
 		this.state = {
-			value: props.value,
+			value: this.formatValue(props),
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleKeyPress = this.handleKeyPress.bind(this);
 		this.handleBlur = this.handleBlur.bind(this);
 	}
 
-	componentWillReceiveProps ({ value }) {
-		if (value) {
-			this.setState({ value });
+	componentWillReceiveProps (props) {
+		if (props.value) {
+			this.setState({
+				value: this.formatValue(props),
+			});
+		}
+	}
+
+	formatValue (props) {
+		const { value, decimalPlaces } = props;
+		if (decimalPlaces) {
+			return value.toFixed(decimalPlaces);
+		} else {
+			return value;
 		}
 	}
 
@@ -54,6 +65,7 @@ class InterceptDetailValue extends Component {
 		const {
 			editable,
 			alignRight,
+			decimalPlaces,
 			...props,
 		} = this.props;
 		const {
@@ -82,6 +94,7 @@ InterceptDetailValue.propTypes = {
 	value: PropTypes.any,
 	onChange: PropTypes.func.isRequired,
 	alignRight: PropTypes.any,
+	decimalPlaces: PropTypes.number,
 };
 
 InterceptDetailValue.defaultProps = {

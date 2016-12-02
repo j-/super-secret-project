@@ -11,6 +11,6 @@ const title = (
 export default ({ value }) => (
 	<Row title={ title }>
 		<Label>Liability ratio</Label>
-		<Value value={ value } editable alignRight />
+		<Value value={ value } editable alignRight decimalPlaces={ 4 } />
 	</Row>
 );
