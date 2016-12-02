@@ -1,16 +1,10 @@
 import React from 'react';
+import InterceptActions from '../intercept-actions';
 import InterceptDetails from '../intercept-details';
-import AcceptPartialButton from '../accept-partial-button';
-import RejectButton from '../reject-button';
-import ResetButton from '../reset-button';
 
 const App = () => (
 	<div>
-		<AcceptPartialButton interceptId="123" />
-		{ ' ' }
-		<RejectButton />
-		{ ' ' }
-		<ResetButton />
+		<InterceptActions interceptId="123" />
 		<hr />
 		<InterceptDetails interceptId="123" />
 	</div>
