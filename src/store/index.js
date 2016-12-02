@@ -1,13 +1,23 @@
 import {
 	SET_LIABILITY_RATIO,
+	RESET_LIABILITY_RATIO,
 } from './types';
 
-export default (state = {}, action) => {
+const DEFAULT_STATE = {
+	liabilityRatio: null,
+};
+
+export default (state = DEFAULT_STATE, action) => {
 	switch (action.type) {
 		case SET_LIABILITY_RATIO:
 			return {
 				...state,
 				liabilityRatio: action.ratio,
+			};
+		case RESET_LIABILITY_RATIO:
+			return {
+				...state,
+				liabilityRatio: null,
 			};
 		default:
 			return state;
