@@ -18,12 +18,15 @@ const InterceptDetailsRows = ({ ...props }) => (
 		<BetType value={ props.betType } />
 		<NoOfBets value={ props.noOfBets } />
 		<Odds value={ props.odds } />
+		<hr />
 		<BetCost value={ props.betCost } />
 		<Payout value={ props.payout } />
 		<Liability value={ props.liability } />
+		<hr />
 		<CurrentPosition value={ props.currentPosition } />
 		<BetPosition value={ props.betPosition } />
 		<NewPosition value={ props.newPosition } />
+		<hr />
 		<LiabilityRatio value={ props.liabilityRatio } />
 	</div>
 );
