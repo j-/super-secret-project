@@ -5,9 +5,9 @@ import ResetButton from '../reset-button';
 
 const InterceptActions = ({ interceptId, ...props }) => (
 	<div className="intercept-actions" { ...props }>
-		<AcceptPartialButton interceptId={ interceptId } />
+		<AcceptPartialButton style={{ width: 100 }} interceptId={ interceptId } />
 		{ ' ' }
-		<RejectButton />
+		<RejectButton style={{ width: 100 }} />
 		{ ' ' }
 		<ResetButton />
 	</div>
