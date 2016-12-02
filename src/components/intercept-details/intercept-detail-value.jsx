@@ -53,6 +53,7 @@ class InterceptDetailValue extends Component {
 	render () {
 		const {
 			editable,
+			alignRight,
 			...props,
 		} = this.props;
 		const {
@@ -69,6 +70,7 @@ class InterceptDetailValue extends Component {
 					onChange={ this.handleChange }
 					onKeyPress={ this.handleKeyPress }
 					onBlur={ this.handleBlur }
+					style={{ textAlign: alignRight ? 'right' : 'left' }}
 				/>
 			</div>
 		);
@@ -79,10 +81,12 @@ InterceptDetailValue.propTypes = {
 	editable: PropTypes.bool,
 	value: PropTypes.any,
 	onChange: PropTypes.func.isRequired,
+	alignRight: PropTypes.any,
 };
 
 InterceptDetailValue.defaultProps = {
 	editable: false,
+	alignRight: false,
 };
 
 const mapDispatchToProps = {

@@ -10,6 +10,6 @@ const title = (
 export default ({ value }) => (
 	<Row title={ title }>
 		<Label>Odds</Label>
-		<Value value={ value } />
+		<Value value={ value } alignRight />
 	</Row>
 );
